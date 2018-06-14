@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TZMusic:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="TZMusic-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="TZMusic:war exploded" />
+    </root>
+  </artifact>
+</component>
