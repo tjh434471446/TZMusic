@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,41 +11,7 @@
 <body>
     <div id="tzHome">
         <div id="nav" class="layui-layout layui-layout-admin">
-            <div class="layui-header">
-                <div class="layui-logo">TZMusic</div>
-                <ul class="layui-nav layui-layout-left">
-                    <li class="layui-nav-item">
-                        <a href="">发现音乐</a>
-                    </li>
-                    <li class="layui-nav-item">
-                        <a href="">我的音乐</a>
-                    </li>
-                </ul>
-                <ul class="layui-nav layui-layout-right">
-                    <li class="nav-item-no-effect">
-                        <div class="layui-input-block">
-                            <input name="search" placeholder="音乐/用户" class="layui-input" type="text">
-                        </div>
-                    </li>
-                    <li class="nav-item-no-effect">
-                        <button class="layui-btn layui-btn-primary search-button"><i class="layui-icon layui-icon-search"></i></button>
-                    </li>
-                    <li class="layui-nav-item">
-                        <a href="#" id="login">登陆</a>
-                    </li>
-                    <li class="layui-nav-item">
-                        <a href="#">注册</a>
-                    </li>
-                    <li style="display: none" class="layui-nav-item">
-                        <a href=""><img src="http://t.cn/RCzsdCq" class="layui-nav-img">我</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">修改信息</a></dd>
-                            <dd><a href="javascript:;">安全管理</a></dd>
-                            <dd><a href="javascript:;">退了</a></dd>
-                        </dl>
-                    </li>
-                </ul>
-            </div>
+            <div class="layui-header" th:include="header :: copyright"></div>
             <div id="carousel">
                 <div class="layui-carousel" id="test10">
                     <div carousel-item="">
@@ -204,7 +170,8 @@
             </div>
         </div>
     </div>
-<script src="../layui/layui.js"></script>
-<script src="../tzmusic/js/index.js"></script>
+    <script src="../layui/layui.js"></script>
+    <script src="../tzmusic/js/index.js"></script>
+    <script src="../tzmusic/js/header.js"></script>
 </body>
 </html>

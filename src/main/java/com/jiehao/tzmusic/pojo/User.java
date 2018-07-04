@@ -1,4 +1,4 @@
-package com.jiehao.tzmusic.dto.entity;
+package com.jiehao.tzmusic.pojo;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -6,16 +6,17 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="tm_user")
-public class User {
+public class User extends POJOBase {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @NotNull
-    @Size(min = 2,max = 20)
+    @Size(min = 2,max = 25)
     private String username;
     @NotNull
     @Size(min = 4)
     private String password;
+    private String role;
 
     public Integer getId() {
         return id;

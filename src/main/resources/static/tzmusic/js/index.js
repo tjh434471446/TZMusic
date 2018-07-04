@@ -9,14 +9,6 @@ layui.use(['element','carousel','layer','jquery'], function(){
         ,width: '100%'
         ,interval: 5000
     });
-    $('#login').click(function () {
-        layer.open({
-            title:'登陆'
-            ,type:2
-            ,content:'/login'
-            ,area:['500px','320px']
-            }
-
-        )
-    })
+    $('#header').load("common/header.html");
+    //layer.msg(11111);
 });

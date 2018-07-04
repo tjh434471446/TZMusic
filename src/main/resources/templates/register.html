@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Register</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../layui/css/layui.css">
@@ -10,35 +10,28 @@
 <body style="overflow-y:hidden;">
 <div id="loginBox">
     <!--/*@thymesVar id="user" type="com.jiehao.tzmusic.pojo.User"*/-->
-        <div class="layui-form layui-form-pane" style="padding-left: 10px;padding-right: 10px">
-            <div class="layui-form-item">
-                <label class="layui-form-label">用户名</label>
-                <div class="layui-input-block">
-                    <input id="username" type="text" class="layui-input" lay-verify="required" autocomplete="off" placeholder="输入用户名"  >
-                </div>
+    <div class="layui-form layui-form-pane" style="padding-left: 10px;padding-right: 10px">
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-block">
+                <input id="username" type="text" class="layui-input" lay-verify="required" autocomplete="off" placeholder="输入用户名"  >
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">密码</label>
-                <div class="layui-input-block">
-                    <input id="password" type="password" class="layui-input" lay-verify="required" autocomplete="off" placeholder="输入密码">
-                </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-block">
+                <input id="password" type="password" class="layui-input" lay-verify="required" autocomplete="off" placeholder="输入密码">
             </div>
-            <div class="layui-form-item" pane="">
-                <div class="layui-input-block" style="margin-left: 5px">
-                    <input name="like[auto]" lay-skin="primary" title="下次自动登陆" checked="" type="checkbox">
-                </div>
-            </div>
-            <div class="layui-form-item" style="padding-top: 20px">
-                <button class="layui-btn layui-btn-fluid">登录</button>
-            </div>
+        </div>
+        <div class="layui-form-item" style="padding-top: 20px">
+            <button class="layui-btn layui-btn-fluid">注册</button>
         </div>
     </div>
 </div>
 <script src="../layui/layui.js"></script>
 <script>
-    layui.use(['form','jquery','layer'], function(){
+    layui.use(['form','jquery'], function(){
         var form = layui.form;
-        var layer = layui.layer;
         var $ = layui.jquery;
         $('button').click(function () {
             var request = {};
@@ -49,13 +42,13 @@
                 type:'POST',
                 contentType: "application/json",
                 data:JSON.stringify(request),
-                url:"login",
+                url:"register",
                 dataType:'json',
                 success:function (data) {
                     //alert(1 === data.code)
                     if (data.code === 1) {
                         //alert(parent.layer.index)
-                        parent.layer.alert("登录成功",function () {
+                        parent.layer.alert("注册成功",function () {
                             parent.layer.closeAll();
                         });
                     }

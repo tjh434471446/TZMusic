@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.1.0.BUILD-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.1.0.BUILD-SNAPSHOT/spring-boot-autoconfigure-2.1.0.BUILD-20180613.140155-177.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.1.0.BUILD-SNAPSHOT/spring-boot-autoconfigure-2.1.0.BUILD-20180702.212102-208.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../../m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.1.0.BUILD-SNAPSHOT/spring-boot-autoconfigure-2.1.0.BUILD-20180613.140155-177-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.1.0.BUILD-SNAPSHOT/spring-boot-autoconfigure-2.1.0.BUILD-20180702.212102-208-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.1.0.BUILD-SNAPSHOT/spring-boot-autoconfigure-2.1.0.BUILD-20180613.140155-177-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.1.0.BUILD-SNAPSHOT/spring-boot-autoconfigure-2.1.0.BUILD-20180702.212102-208-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
