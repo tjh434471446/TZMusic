@@ -9,6 +9,6 @@ layui.use(['element','carousel','layer','jquery'], function(){
         ,width: '100%'
         ,interval: 5000
     });
-    $('#header').load("common/header.html");
+    //$('#header').load("common/header.html");
     //layer.msg(11111);
 });

@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface UserRepository extends CrudRepository<User,Long> {
+public interface UserService extends CrudRepository<User,Long> {
 
     User getByUsernameAndAndPassword(String username,String password);
     List<User> findByUsername(String username);

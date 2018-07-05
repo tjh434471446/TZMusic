@@ -1,6 +1,6 @@
 package com.jiehao.tzmusic.controllers;
 
-import com.jiehao.tzmusic.dao.UserRepository;
+import com.jiehao.tzmusic.dao.UserService;
 import com.jiehao.tzmusic.pojo.User;
 import com.jiehao.tzmusic.pojo.WebResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import javax.validation.Valid;
 @EnableAutoConfiguration
 class HomeController{
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
     @RequestMapping("/index")
     String home(Model model,HttpSession session){
         User user = (User) session.getAttribute("user");
@@ -30,14 +30,14 @@ class HomeController{
     @GetMapping("/login")
     String loginForm(Model model){
         model.addAttribute("user",new User());
-        return "login";
+        return "user/login";
     }
 
     @PostMapping("/login")
     @ResponseBody WebResult loginSubmit(@Valid @RequestBody User user,HttpSession session){
         System.out.println("the username is " + user.getUsername());
         //System.out.println("the password is " + user.getPassword());
-        User userFind = userRepository.getByUsernameAndAndPassword(user.getUsername(),user.getPassword());
+        User userFind = userService.getByUsernameAndAndPassword(user.getUsername(),user.getPassword());
         if (null != userFind) {
             if (!userFind.getPassword().equals(user.getPassword())){
                 return new WebResult(-1,"用户名或密码错误",null);
@@ -53,15 +53,15 @@ class HomeController{
     String registerForm(Model model){
         model.addAttribute("user",new User());
         System.out.println(11111);
-        return  "register";
+        return  "user/register";
     }
     @PostMapping("/register")
     @ResponseBody WebResult registerSubmit(@RequestBody User user,HttpSession session){
-        User userCheck = userRepository.getByUsernameAndAndPassword(user.getUsername(),user.getPassword());
+        User userCheck = userService.getByUsernameAndAndPassword(user.getUsername(),user.getPassword());
         if (null != userCheck){
             new WebResult(-1,"用户已存在",null);
         }
-        userRepository.save(user);
+        userService.save(user);
         //System.out.println(userCheck.getUsername());
         session.setAttribute("user",user);
         session.setAttribute("loginFlag",true);
